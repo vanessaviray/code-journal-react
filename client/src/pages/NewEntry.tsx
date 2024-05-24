@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
-import {addEntry} from '../../../js-solution/data'
-import { UnsavedEntry } from "../../../js-solution/data";
-import { type Entry } from "../../../js-solution/data";
-import {data} from './data'
+import {addEntry} from '../data'
 import { useNavigate } from 'react-router-dom'
+export type Props = {
+  title: string;
+  photoUrl: string;
+  notes: string;
+};
 
 export function NewEntry(){
 
@@ -12,23 +14,18 @@ export function NewEntry(){
   const [title, setTitle] = useState('');
   const [photoUrl, setPhotoUrl] = useState('');
   const [notes, setNotes] = useState('');
+  // const [error, setError] = useState<unknown>();
+  // const [isClick, setIsClick] = useState<object>();
 
-  type Props = {
-    title:string,
-    photoUrl:string,
-    notes:string
-  }
 
-  useEffect(()=>{
+const newEntry = { title, photoUrl, notes };
 
-  })
 
-  function handleclick(){
-    const newEntry = {title, photoUrl, notes}
-    Object.defineProperty(newEntry, 'entryId', { value: data.nextEntryId });
-    data.nextEntryId++;
-    data.entries.unshift(newEntry);
+  function handleClick(){
+
+    addEntry(newEntry)
     navigate('entries');
+    // console.log(newEntry)
   }
 
   return (
@@ -38,7 +35,8 @@ export function NewEntry(){
       <input onChange={(e) => setTitle(e.target.value)} />
       <input onChange={(e) => setPhotoUrl(e.target.value)} />
       <textarea onChange={(e) => setNotes(e.target.value)} />
-      <button onClick={handleclick}>Save</button>
+      <button onClick={handleClick}>Save</button>
+
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { NavBar } from './pages/NavBar';
-import './App.css';
+// import './App.css';
 import { NewEntry } from './pages/NewEntry';
 import { EditEntry } from './pages/EditEntry';
 import { Entries } from './pages/Entries';
