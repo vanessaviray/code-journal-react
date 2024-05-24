@@ -1,4 +1,11 @@
+import { data } from "./data"
+
 export function Entries(){
+
+  const entries = data.entries.map((entry)=>{
+    <li></li>
+  })
+
   return(
     <>
       <div>
@@ -6,11 +13,7 @@ export function Entries(){
         <button></button>
       </div>
       <ul>
-        <li>
-          <img></img>
-          <p>text contentttttttttttt</p>
-          <p>text contentttttttttttt</p>
-        </li>
+
       </ul>
     </>
   )
