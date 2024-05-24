@@ -33,14 +33,14 @@ export function NewEntry(){
 // }
 console.log(title)
 
-  return(
+  return (
     <>
       <h1>New Entry</h1>
-      <img/>
-      <input onChange={(e)=> setTitle(e.target.value)}/>
-      <input/>
-      <textarea/>
+      <img />
+      <input onChange={(e) => setTitle(e.target.value)} />
+      <input onChange={(e) => setPhotoUrl(e.target.value)} />
+      <textarea onChange={(e) => setNotes(e.target.value)} />
       <button onClick={handleclick}>Save</button>
     </>
-  )
+  );
 }
